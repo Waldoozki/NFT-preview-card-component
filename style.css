@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue-main: hsl(217, 54%, 11%);
+  --Very-dark-blue-card: hsl(216, 50%, 16%);
+  --Very-dark-blue: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  --font: 'Outfit', sans-serif;
+}
+body {
+  color: var(--White);
+  font-family: var(--font);
+}
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  background-color: var(--Very-dark-blue-main);
+}
+.main__container {
+  margin: auto;
+  background-color: var(--Very-dark-blue-card);
+  width: 360px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: max-content max-content;
+  place-items: center;
+  border-radius: 15px;
+  padding: 20px 0;
+  box-shadow: 0 0 15px hsl(215, 32%, 27%);
+}
+.main__container--content {
+  width: 85%;
+  overflow: hidden;
+}
+.main__picture {
+  overflow: hidden;
+  border-radius: 10px;
+  display: grid;
+  grid-template-areas: "img";
+  cursor: pointer;
+}
+.main__picture::after {
+  content: url('./images/icon-view.svg');
+  grid-area: img;
+  background-color: hsl(178, 100%, 50%, 20%);
+  display: grid;
+  place-items: center;
+  transform: translate(100%, 100%);
+  transition: .5s ease-in;
+}
+.main__picture:hover::after {
+  transform: translate(0);
+}
+.main__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  grid-area: img;
+}
+/* --main__content */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0 0 0;
+}
+.main__preview {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 1px solid hsl(215, 32%, 27%);
+  padding: 0 0 20px 0;
+}
+.link {
+  text-decoration: none;
+  color: var(--White);
+}
+.link:hover {
+  color: var(--Cyan);
+  transition: .5s;
+}
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.paragraph {
+  color: var(--Soft-blue);
+  font-weight: 300;
+}
+.paragraph__ethereum {
+  color: var(--Cyan);
+}
+.preview__states, .states__ethereum, .states__clock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+/* --main__creator */
+.main__creator {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.creator__img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+/* FINISH */
